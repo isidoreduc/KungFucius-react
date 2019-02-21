@@ -25,11 +25,11 @@ class DishDetail extends Component {
                 <div className='col-12 col-md-5 m-1'>
                     <h4>Comments</h4>
                     <ul className="list-unstyled">
-                        {comments.map = (c => {
+                        {comments.map((c) => {
                             return (
                                 <li key={c.id}>
                                     <p>{c.comment}</p>
-                                    <p>{c.author}</p>
+                                    <p>-- {c.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(c.date)))}</p>
                                 </li>
                             );
                         })}
