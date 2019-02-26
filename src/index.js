@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom'; // bootstrap first and then index.css to be able to use owm styles over bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap-social/bootstrap-social.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
