@@ -1,33 +1,35 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media, CardText, CardImg, CardTitle} from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const RenderLeader = ({leader}) => {
-        
-    return(
-        <Card>
-            <CardImg top src={leader.image} alt={leader.name} />
-            <CardBody>
-              <CardTitle>{leader.name}</CardTitle>
-              <CardText>{leader.designation}</CardText>
-              <CardText>{leader.description}</CardText>
-            </CardBody>
-        </Card>
-    );
 
-}
 
 function About(props) {
-    const leaders = props.leaders.map(le => {
-        return (
-            //<div key={leader.id} className='col-12 m-1'>
-                <RenderLeader leader={le}  />
-            //</div>
-            
-        );
-    });
 
-    return(
+    // const RenderLeader = ({ item }) => {
+    //     return (
+    //         <div key={item.id} className="col-12 mt-5">
+    //             <Media tag="li">
+    //                 <Media left middle>
+    //                     <Media object src={item.image} alt={item.name} />
+    //                 </Media>
+    //                 <Media body className="ml-5">
+    //                     <Media heading>{item.name}</Media>
+    //                     <p>{item.designation}</p>
+    //                     <p>{item.description}</p>
+    //                 </Media>
+    //             </Media>
+    //         </div>
+    //     );
+
+    // }
+    // const leaders = props.leaders.map((leader) => {
+    //     return (
+    //         <RenderLeader item={leader}/>
+    //     );
+    // });
+
+    return (
         <div className="container">
             <div className="row">
                 <Breadcrumb>
@@ -37,7 +39,7 @@ function About(props) {
                 <div className="col-12">
                     <h3>About Us</h3>
                     <hr />
-                </div>                
+                </div>
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
@@ -81,11 +83,13 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
-                <div className="col-12">
+                {/* <div className="col-12">
                     <Media list>
-                        {leaders}
+                        <div>
+                           {leaders} 
+                        </div>
                     </Media>
-                </div>
+                </div> */}
             </div>
         </div>
     );
