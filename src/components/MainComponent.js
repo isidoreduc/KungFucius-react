@@ -10,6 +10,7 @@ import Footer from './FooterComponent';
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
+import About from './AboutComponent';
 
 
 class Main extends Component {
@@ -52,6 +53,7 @@ class Main extends Component {
           <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
           <Route path='/menu/:dishId' component={DishWithId} />
           <Route exact path='/contact' component={Contact}/>
+          <Route exact path='/about' component={About}/>
           <Redirect to="/home" />
         </Switch>
         <Footer />

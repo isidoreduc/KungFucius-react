@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const RenderMenuItem = ({ dish, onClick }) => { // dish, onClick are properties of object props
+const RenderMenuItem = ({ dish }) => { // dish, onClick are properties of object props
     return (
         <Link to={`menu/${dish.id}`}>
             <Card >
