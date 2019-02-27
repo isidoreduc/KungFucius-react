@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
 const RenderMenuItem = ({ dish, onClick }) => { // dish, onClick are properties of object props
     return (
