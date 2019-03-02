@@ -27,6 +27,7 @@ class Contact extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.validate = this.validate.bind(this);
     }
 
     handleSubmit = (event) => {
