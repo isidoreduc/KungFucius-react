@@ -204,8 +204,8 @@ class Contact extends Component {
                                 <Col md={10}>
                                     <Input type='textarea' id='message' name='message' placeholder='Type here please, then press send'
                                         rows='10' value={this.state.message}
-                                        valid={errors.message === null}
-                                        invalid={errors.message !== null}
+                                        valid={errors.message === ''}
+                                        invalid={errors.message !== ''}
                                         onChange={this.handleInputChange}
                                         onBlur={this.handleBlur('message')} />
                                     <FormFeedback>{errors.message}</FormFeedback>
