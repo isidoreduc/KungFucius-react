@@ -1,11 +1,11 @@
-import * as ActionTypes from './ActionTypes.js';
+import * as ActionTypes from './ActionTypes';
 
 export const addComment = (dishId, rating, author, comment) => ({
     type: ActionTypes.ADD_COMMENT,
     payload: {
-        dishId, // same as dishId = dishId
-        rating,
-        author,
-        comment
+        dishId: dishId,
+        rating: rating,
+        author: author,
+        comment: comment
     }
 });

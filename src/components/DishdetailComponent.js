@@ -65,6 +65,7 @@ class CommentForm extends Component {
     }
 
     handleSubmit = (values) => {
+        this.toggleModal();
         this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
@@ -96,11 +97,11 @@ class CommentForm extends Component {
                                     </Control.select>
                                 </Col>
                             </Row>
-                            <Label md={{ size: 10, offset: 1 }} htmlFor="name" >Name</Label>
+                            <Label md={{ size: 10, offset: 1 }} htmlFor="author" >Name</Label>
                             <Row className="form-group">
                                 
                                 <Col md={{ size: 10, offset: 1 }}>
-                                    <Control.text model=".name" id="name" name="name"
+                                    <Control.text model=".author" id="author" name="author"
                                         placeholder="Your Name"
                                         className="form-control"
                                         validators={{
@@ -109,7 +110,7 @@ class CommentForm extends Component {
                                     />
                                     <Errors
                                         className="text-danger"
-                                        model=".name"
+                                        model=".author"
                                         show="touched"
                                         messages={{
                                             required: '***Required ',
@@ -119,10 +120,10 @@ class CommentForm extends Component {
                                     />
                                 </Col>
                             </Row>
-                            <Label md={{ size: 10, offset: 1 }} htmlFor="message">Comment</Label>
+                            <Label md={{ size: 10, offset: 1 }} htmlFor="comment">Comment</Label>
                             <Row className="form-group">
                                 <Col md={{ size: 10, offset: 1 }}>
-                                    <Control.textarea model=".message" id="message" name="message"
+                                    <Control.textarea model=".comment" id="comment" name="comment"
                                         rows="5"
                                         className="form-control"
                                         validators={{
@@ -131,7 +132,7 @@ class CommentForm extends Component {
                                         />
                                         <Errors
                                             className="text-danger"
-                                            model=".message"
+                                            model=".comment"
                                             show="touched"
                                             messages={{
                                                 required: '***Required ',
@@ -190,7 +191,7 @@ const DishDetail = (props) => {
                 </div>
                 <div className="row">
                     <RenderDish dish={props.dish} />
-                    <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dishId}/>
+                    <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}/>
 
                 </div>
             </div>
