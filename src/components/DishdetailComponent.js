@@ -26,7 +26,7 @@ const RenderDish = ({ dish }) => { // just extracting property dish from props a
 
 }
 
-const RenderComments = ({ comments }) => { // just extracting property comments from props and use it as parameter
+const RenderComments = ({ comments, addComment, dishId }) => { // just extracting property comments from props and use it as parameter
     if (comments != null)
         return (
             <div className='col-12 col-md-5 m-1'>
@@ -42,10 +42,10 @@ const RenderComments = ({ comments }) => { // just extracting property comments 
                             </div>
                         );
                     })}
-                    <CommentForm />
+                    <CommentForm dishId={dishId} addComment={addComment}/>
                 </ul>
 
-
+                
             </div>
         );
     else
@@ -65,7 +65,7 @@ class CommentForm extends Component {
     }
 
     handleSubmit = (values) => {
-        alert("You submitted: " + JSON.stringify(values));
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
     toggleModal() {
@@ -190,7 +190,7 @@ const DishDetail = (props) => {
                 </div>
                 <div className="row">
                     <RenderDish dish={props.dish} />
-                    <RenderComments comments={props.comments} />
+                    <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dishId}/>
 
                 </div>
             </div>
